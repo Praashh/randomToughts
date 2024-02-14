@@ -1,17 +1,28 @@
 import { unstable_noStore as noStore } from "next/cache";
-import { Button } from "~/components/ui/button";
+import { Navbar } from "~/components/layout/navbar";
+import { Home } from "./_components/Home";
+import { IconActivity } from "@tabler/icons-react";
 
 // import { CreatePost } from "~/app/_components/create-post";
 // import { getServerAuthSession } from "~/server/auth";
 // import { api } from "~/trpc/server";
 
-export default async function Home() {
+export default async function Page() {
   noStore();
   // const hello = await api.post.hello.query({ text: "Praash" });
   // const session = await getServerAuthSession();
 
   return (
-    <Button>Praash</Button>
+    // <Button>Praash</Button>
+    <>
+    <Navbar />
+    <Home />
+    <div className="flex flex-col items-center justify-center">
+    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          Start Sharing your thoughts <IconActivity/>
+    </button>
+    </div>
+    </>
     // <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
     
     //     <div className="flex flex-col items-center gap-2">
