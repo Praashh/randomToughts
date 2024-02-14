@@ -13,7 +13,7 @@ export const postRouter = createTRPCRouter({
       return {
         greeting: `Hello ${input.text}`,
       };
-    }),
+  }),
 
   create: protectedProcedure
     .input(z.object({ name: z.string().min(1) }))
