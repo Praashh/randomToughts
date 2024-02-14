@@ -48,7 +48,7 @@ async function CrudShowcase() {
       {latestPost ? (
         <>
         <p className="truncate">Your most recent post: {latestPost.name}</p>
-        <Image src={session.user.image} alt="Profile picture" width={200} height={200} />
+        {/* <Image src={session.user.image} alt="Profile picture" width={200} height={200} /> */}
         </>
       ) : (
         <p>You have no posts yet.</p>
