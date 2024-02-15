@@ -1,7 +1,7 @@
-"use client";
 import React from "react";
 import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { FloatingNav } from "./floating-nav";
+import Nav from "./navbar-menu";
 export function Navbar() {
   const navItems = [
     {
@@ -25,6 +25,7 @@ export function Navbar() {
   return (
     <div className="relative  w-full">
       {/* <HoveredLink/> */}
+      <Nav />
       <FloatingNav navItems={navItems} />
     </div>
   );
