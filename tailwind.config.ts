@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
-import { DefaultTheme } from "tailwindcss/types/generated/default-theme"
-import  colors  from "tailwindcss/colors"
 
  
 /** @type {import('tailwindcss').Config} */
