@@ -23,11 +23,11 @@ export function Navbar() {
     },
   ];
   return (
-    <div className="relative  w-full">
-      {/* <HoveredLink/> */}
-      <Nav />
-      <FloatingNav navItems={navItems} />
-    </div>
+    // <div className="flex flex-col justify-between h-[100vh] bg-red-500">
+    <Nav />
+      // {/* <HoveredLink/> */}
+      // {/* <FloatingNav navItems={navItems} /> */}
+    // </div>
   );
 }
 

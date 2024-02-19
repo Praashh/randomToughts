@@ -14,19 +14,29 @@ export default async function Page() {
 
   return (
     // <Button>Praash</Button>
-    <>
-    <Navbar />
-    <Home />
-    <div className="flex flex-col items-center justify-center">
-    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          Start Sharing your thoughts <IconActivity/>
-    </button>
+    <div className="flex">
+      <div>
+      <Navbar />
+      </div>
+      <div>
+      {!session ? (
+        <>
+          <Home />
+          <div className="flex flex-col items-center justify-center">
+            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              Start Sharing your thoughts <IconActivity />
+            </button>
+          </div>
+        </>
+      ) : (
+        <div className="flex w-full  items-center justify-center">
+          <CrudShowcase />
+        </div>
+      )}
+      </div>
     </div>
-    <div className="flex justify-center items-center"><CrudShowcase /></div>
-     
-    </>
     // <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-    
+
     //     <div className="flex flex-col items-center gap-2">
     //       <p className="text-2xl text-white">
     //         {hello ? hello.greeting : "Loading tRPC query..."}
@@ -54,19 +64,10 @@ async function CrudShowcase() {
   const session = await getServerAuthSession();
   if (!session?.user) return null;
 
-  const latestPost = await api.post.getLatest.query();
+  // const latestPost = await api.post.getLatest.query();
 
   return (
     <div className="w-full max-w-xs">
-      {latestPost ? (
-        <>
-        <p className="truncate">Your most recent post: {latestPost.name}</p>
-        {/* <Image src={session.user.image} alt="Profile picture" width={200} height={200} /> */}
-        </>
-      ) : (
-        <p>You have no posts yet.</p>
-      )}
-
       <CreatePost />
     </div>
   );
