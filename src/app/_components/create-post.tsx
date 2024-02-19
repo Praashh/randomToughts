@@ -22,18 +22,18 @@ export function CreatePost() {
         e.preventDefault();
         createPost.mutate({ name });
       }}
-      className="flex flex-col gap-2"
+      className="flex  gap-2 justify-center items-center"
     >
       <input
         type="text"
         placeholder="Title"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="w-full rounded-full px-4 py-2 text-black"
+        className="w-full rounded-full px-4 py-2 text-white bg-inherit"
       />
       <button
         type="submit"
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
+        className="rounded-full bg-white/10 px-5 py-3 font-semibold transition hover:bg-white/20"
         disabled={createPost.isLoading}
       >
         {createPost.isLoading ? "Submitting..." : "Submit"}
