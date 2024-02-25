@@ -26,6 +26,17 @@ model Post {
     @@index([name])
 }
 
+model Issue {
+    id        Int      @id @default(autoincrement())
+    issue      String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    createdBy   User   @relation(fields: [createdById], references: [id])
+    createdById String
+
+    @@index([issue])
+}
 // Necessary for Next auth
 model Account {
     id                String  @id @default(cuid())
@@ -62,6 +73,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    issues        Issue[]
 }
 
 model VerificationToken {

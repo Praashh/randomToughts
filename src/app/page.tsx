@@ -9,7 +9,7 @@ import { api } from "~/trpc/server";
 
 export default async function Page() {
   noStore();
-  const hello = await api.post.hello.query({ text: "Praash" });
+  // const hello = await api.post.hello.query({ text: "Praash" });
   const session = await getServerAuthSession();
 
   return (

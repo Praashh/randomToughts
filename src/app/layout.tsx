@@ -3,7 +3,7 @@ import "~/styles/globals.css";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { cn } from "~/lib/utils";
-import { ThemeProvider } from "./_provider";
+import { AppProvider, ThemeProvider } from "./_provider";
 import { fontSans } from "~/lib/fonts";
 
 export const metadata = {
@@ -26,14 +26,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          disableTransitionOnChange
-        >
-          <TRPCReactProvider>{children}</TRPCReactProvider>
-        </ThemeProvider>
+       <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

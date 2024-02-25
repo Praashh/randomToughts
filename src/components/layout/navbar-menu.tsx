@@ -27,7 +27,7 @@ export default async function Nav() {
       <div><IconTrendingUp height={30} width={30}/></div>
         <span className="text-xl font-semibold">Trending Projects</span>
       </Link>
-      <Link className="mr-6 flex items-center gap-2 " href="/experiences">
+      <Link className="mr-6 flex items-center gap-2 " href={"/experiences"}>
       <div><IconAlbum height={30} width={30}/></div>
         <span className="text-xl font-semibold">Interview Experiences</span>
       </Link>
