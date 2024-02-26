@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import "react-quill/dist/quill.snow.css";
 import { useState } from "react";
-// import  ReactQuill, { UnprivilegedEditor } from "react-quill"
 import { Button } from "~/components/ui/button";
 import { api } from "~/trpc/react";
 
@@ -28,8 +27,6 @@ export function CreateIssue() {
         <div className="w-[90vw]">
           <input
             className="bg-gray-500"
-            // value={issue}
-            // theme="snow"
             value={issue}
             onChange={(e) => setIssue(e.target.value)}
           />
