@@ -28,14 +28,15 @@ model Post {
 
 model Issue {
     id        Int      @id @default(autoincrement())
-    issue      String
+    title      String
+    description      String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
     createdBy   User   @relation(fields: [createdById], references: [id])
     createdById String
 
-    @@index([issue])
+    @@index([title])
 }
 // Necessary for Next auth
 model Account {
