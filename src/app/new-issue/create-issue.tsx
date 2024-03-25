@@ -88,16 +88,16 @@ export default function CreateIssue() {
         </CardContent>
       </Card>
     }
-      <div className="flex w-full justify-center items-center max-w-full">
+      {/* <div className="flex w-full justify-center items-center max-w-full"> */}
+      {/* </div> */}
+    </div>
         <Button
           variant={"default"}
           className="w-full"
           disabled={createIssue.isLoading}
-        >
+          >
           {createIssue.isLoading ? "creating...." : "Create"}
-        </Button>
-      </div>
-    </div>
+          </Button>
     </form>
   )
 }

@@ -5,6 +5,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { cn } from "~/lib/utils";
 import { AppProvider, ThemeProvider } from "./_provider";
 import { fontSans } from "~/lib/fonts";
+import { Navbar } from "~/components/layout/navbar";
 
 export const metadata = {
   title: "Create T3 App",
@@ -18,16 +19,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body
+    <div>
+      <Navbar/>
+      <div
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
        <AppProvider>{children}</AppProvider>
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }
